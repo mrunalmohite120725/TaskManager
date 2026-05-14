@@ -155,3 +155,33 @@ Defines email message body.
 What is Messaging.sendEmail()?
 
 Sends email from Salesforce.
+
+
+
+
+
+
+
+
+Step 1 — Open Deliverability Settings
+
+In Setup search:
+
+Deliverability
+
+Click:
+
+Deliverability
+Step 2 — Change Access Level
+
+Find:
+
+Access Level
+
+Change it to:
+
+All Email
+
+Click:
+
+Save
