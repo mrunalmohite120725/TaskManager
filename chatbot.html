@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Travel Agency Chatbot</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>Explore the World With Us</h1>
+
+        <p>Best Travel Packages at Affordable Prices</p>
+
+    </div>
+
+    <!-- Tour Packages -->
+
+    <div class="services">
+
+        <h1>Our Tour Packages</h1>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>Goa Tour</h3>
+                <p>4 Days Goa Beach Package</p>
+            </div>
+
+            <div class="card">
+                <h3>Kashmir Tour</h3>
+                <p>6 Days Kashmir Package</p>
+            </div>
+
+            <div class="card">
+                <h3>Manali Tour</h3>
+                <p>5 Days Manali Adventure Trip</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Chatbot -->
+
+    <div class="chatbox">
+
+        <div class="chat-header">
+            ✈ Chat with us
+        </div>
+
+        <div id="chat">
+
+            <b>Bot:</b>
+            Hello! Welcome to Travel Agency
+            <br><br>
+
+        </div>
+
+        <div class="input-area">
+
+            <input type="text"
+                   id="userInput"
+                   placeholder="Ask something...">
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+        <div class="quick-buttons">
+
+            <button onclick="quickReply('contact')">
+                Contact
+            </button>
+
+            <button onclick="quickReply('booking')">
+                Booking
+            </button>
+
+            <button onclick="quickReply('tours')">
+                Tours
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

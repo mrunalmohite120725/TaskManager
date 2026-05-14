@@ -1,0 +1,306 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Expert System</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background: #f0f0f0;
+            text-align: center;
+        }
+
+        .box
+        {
+            width: 500px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1
+        {
+            color: #0077cc;
+        }
+
+        select, button
+        {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        .question
+        {
+            margin: 15px;
+        }
+
+        #result
+        {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Hospital Expert System</h1>
+
+    <!-- Department -->
+
+    <select id="department">
+
+        <option value="ortho">
+            Orthopedic
+        </option>
+
+        <option value="gyno">
+            Gynecology
+        </option>
+
+        <option value="cardio">
+            Cardiology
+        </option>
+
+        <option value="ent">
+            ENT
+        </option>
+
+        <option value="neuro">
+            Neurology
+        </option>
+
+    </select>
+
+    <!-- Questions -->
+
+    <div class="question">
+
+        <p>Do you have pain?</p>
+
+        <select id="q1">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+    </div>
+
+    <div class="question">
+
+        <p>Do you have swelling/problem?</p>
+
+        <select id="q2">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+    </div>
+
+    <div class="question">
+
+        <p>Do you feel weakness?</p>
+
+        <select id="q3">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+    </div>
+
+    <div class="question">
+
+        <p>Is problem severe?</p>
+
+        <select id="q4">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+    </div>
+
+    <button onclick="checkDisease()">
+        Check Disease
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function checkDisease()
+{
+    let dept =
+    document.getElementById("department").value;
+
+    let score = 0;
+
+    let q1 =
+    document.getElementById("q1").value;
+
+    let q2 =
+    document.getElementById("q2").value;
+
+    let q3 =
+    document.getElementById("q3").value;
+
+    let q4 =
+    document.getElementById("q4").value;
+
+    // Score Calculation
+
+    if(q1=="Yes")
+    {
+        score += 2;
+    }
+
+    if(q2=="Yes")
+    {
+        score += 2;
+    }
+
+    if(q3=="Yes")
+    {
+        score += 2;
+    }
+
+    if(q4=="Yes")
+    {
+        score += 4;
+    }
+
+    let result = "";
+
+    // Orthopedic
+
+    if(dept=="ortho")
+    {
+        if(score<=3)
+        {
+            result =
+            "Minor Bone Problem<br>Take Rest";
+        }
+
+        else if(score<=6)
+        {
+            result =
+            "Moderate Orthopedic Problem<br>X-Ray Required";
+        }
+
+        else
+        {
+            result =
+            "Severe Bone Disorder<br>Consult Orthopedic Doctor";
+        }
+    }
+
+    // Gynecology
+
+    else if(dept=="gyno")
+    {
+        if(score<=3)
+        {
+            result =
+            "Minor Health Issue<br>Regular Checkup";
+        }
+
+        else if(score<=6)
+        {
+            result =
+            "Moderate Gynecology Problem<br>Sonography Required";
+        }
+
+        else
+        {
+            result =
+            "Severe Gynecology Condition<br>Immediate Consultation";
+        }
+    }
+
+    // Cardiology
+
+    else if(dept=="cardio")
+    {
+        if(score<=3)
+        {
+            result =
+            "Minor Heart Issue<br>Exercise Regularly";
+        }
+
+        else if(score<=6)
+        {
+            result =
+            "Moderate Cardiac Problem<br>ECG Required";
+        }
+
+        else
+        {
+            result =
+            "Severe Heart Disease<br>Hospitalization Required";
+        }
+    }
+
+    // ENT
+
+    else if(dept=="ent")
+    {
+        if(score<=3)
+        {
+            result =
+            "Minor ENT Infection<br>Warm Water and Rest";
+        }
+
+        else if(score<=6)
+        {
+            result =
+            "Moderate ENT Problem<br>ENT Consultation";
+        }
+
+        else
+        {
+            result =
+            "Severe Infection<br>Immediate Treatment Required";
+        }
+    }
+
+    // Neurology
+
+    else if(dept=="neuro")
+    {
+        if(score<=3)
+        {
+            result =
+            "Minor Neurological Problem<br>Proper Sleep";
+        }
+
+        else if(score<=6)
+        {
+            result =
+            "Moderate Neurological Disorder<br>Brain Scan Required";
+        }
+
+        else
+        {
+            result =
+            "Severe Neurological Disorder<br>Consult Neurologist";
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+    result;
+}
+
+</script>
+
+</body>
+</html>

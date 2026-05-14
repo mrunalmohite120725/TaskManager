@@ -1,0 +1,88 @@
+body
+{
+    margin: 0;
+    font-family: Arial;
+    background: #f0f0f0;
+}
+
+.header
+{
+    text-align: center;
+    padding: 50px;
+    background: white;
+}
+
+.header h1
+{
+    color: #0077cc;
+}
+
+.services
+{
+    text-align: center;
+    padding: 20px;
+}
+
+.card-container
+{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card
+{
+    width: 220px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.chatbox
+{
+    width: 320px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.chat-header
+{
+    background: #0077ff;
+    color: white;
+    padding: 15px;
+}
+
+#chat
+{
+    height: 250px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.input-area
+{
+    padding: 10px;
+}
+
+input
+{
+    width: 70%;
+    padding: 8px;
+}
+
+button
+{
+    padding: 8px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.quick-buttons
+{
+    padding: 10px;
+}
