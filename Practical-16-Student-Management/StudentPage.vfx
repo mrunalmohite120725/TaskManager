@@ -1,0 +1,100 @@
+<apex:page controller="StudentController">
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f6f9;
+        }
+
+        .mainBox{
+            width:65%;
+            margin:auto;
+            margin-top:30px;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        .title{
+            text-align:center;
+            font-size:30px;
+            color:#2e6da4;
+            margin-bottom:20px;
+        }
+
+    </style>
+
+    <div class="mainBox">
+
+        <div class="title">
+            Student Record Management System
+        </div>
+
+        <apex:form>
+
+            <!-- Add Student -->
+
+            <apex:pageBlock title="Add Student Details">
+
+                <apex:pageBlockSection columns="1">
+
+                    <apex:inputField value="{!stu.Name}"/>
+
+                    <apex:inputField value="{!stu.roll__c}"/>
+
+                    <apex:inputField value="{!stu.class__c}"/>
+
+                    <apex:inputField value="{!stu.Mobile_no__c}"/>
+
+                </apex:pageBlockSection>
+
+                <apex:commandButton value="Save Student"
+                                    action="{!saveStudent}"/>
+
+            </apex:pageBlock>
+
+            <br/>
+
+            <!-- Student Records -->
+
+            <apex:pageBlock title="Student Records">
+
+                <apex:pageBlockTable value="{!students}" var="s">
+
+                    <apex:column headerValue="Name"
+                                 value="{!s.Name}"/>
+
+                    <apex:column headerValue="Roll No"
+                                 value="{!s.roll__c}"/>
+
+                    <apex:column headerValue="Class"
+                                 value="{!s.class__c}"/>
+
+                    <apex:column headerValue="Mobile Number"
+                                 value="{!s.Mobile_no__c}"/>
+
+                    <!-- Delete Button -->
+
+                    <apex:column headerValue="Action">
+
+                        <apex:commandLink value="Delete"
+                                          action="{!deleteStudent}">
+
+                            <apex:param name="delId"
+                                        value="{!s.Id}"/>
+
+                        </apex:commandLink>
+
+                    </apex:column>
+
+                </apex:pageBlockTable>
+
+            </apex:pageBlock>
+
+        </apex:form>
+
+    </div>
+
+</apex:page>
