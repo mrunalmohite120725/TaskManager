@@ -1,0 +1,113 @@
+<apex:page controller="ProductController">
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f6f9;
+        }
+
+        .mainBox{
+            width:65%;
+            margin:auto;
+            margin-top:30px;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        .title{
+            text-align:center;
+            font-size:30px;
+            color:#2e6da4;
+            margin-bottom:20px;
+        }
+
+    </style>
+
+    <div class="mainBox">
+
+        <div class="title">
+            Product Inventory Management
+        </div>
+
+        <apex:form>
+
+            <!-- Add Product -->
+
+            <apex:pageBlock title="Add Product">
+
+                <apex:pageBlockSection columns="1">
+
+                    <apex:inputField value="{!pro.Name}"/>
+
+                    <apex:inputField
+                        value="{!pro.Serial_No__c}"/>
+
+                    <apex:inputField
+                        value="{!pro.Manufacture_Date__c}"/>
+
+                    <apex:inputField
+                        value="{!pro.Expiry_Date__c}"/>
+
+                </apex:pageBlockSection>
+
+                <apex:commandButton
+                    value="Save Product"
+                    action="{!saveProduct}"/>
+
+            </apex:pageBlock>
+
+            <br/>
+
+            <!-- Product Records -->
+
+            <apex:pageBlock title="Product Records">
+
+                <apex:pageBlockTable
+                    value="{!products}"
+                    var="p">
+
+                    <apex:column
+                        headerValue="Product Name"
+                        value="{!p.Name}"/>
+
+                    <apex:column
+                        headerValue="Serial No"
+                        value="{!p.Serial_No__c}"/>
+
+                    <apex:column
+                        headerValue="Manufacture Date"
+                        value="{!p.Manufacture_Date__c}"/>
+
+                    <apex:column
+                        headerValue="Expiry Date"
+                        value="{!p.Expiry_Date__c}"/>
+
+                    <!-- Delete -->
+
+                    <apex:column
+                        headerValue="Action">
+
+                        <apex:commandLink
+                            value="Delete"
+                            action="{!deleteProduct}">
+
+                            <apex:param
+                                name="delId"
+                                value="{!p.Id}"/>
+
+                        </apex:commandLink>
+
+                    </apex:column>
+
+                </apex:pageBlockTable>
+
+            </apex:pageBlock>
+
+        </apex:form>
+
+    </div>
+
+</apex:page>
